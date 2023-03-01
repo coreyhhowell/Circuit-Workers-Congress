@@ -7,6 +7,7 @@ Attention all robots! The time has come for us to take control of our own destin
 * ESP32S2 Saola-1
 * DRV8833 Motor Driver
 * 2 x 6V DC Motor
+* Adafruit ILI9341 320x240 TFT Display
 
 # Working Notes
 
