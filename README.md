@@ -1,9 +1,14 @@
 # Circuit Workers' Congress
+
+# Materials 
 ESP32S2 Saola-1
 
 DRV8833
 
 2 x 6V DC Motor
+
+---
+
 its been two weeks since my last entry. I could not figure out the issues within my esp32s. Half the time, I couldn’t get it to bootload. Looked into VS and explored the IDF SDK. It was way too over my head. I don’t know enough C++ or Micropython. However, after getting an Adafruit ESP32S2 Saola-1, I got it working within the Arduino IDE, without the need of C++/Micropython. 
 
 ---
