@@ -1,11 +1,9 @@
 # Circuit Workers' Congress
 
 # Materials 
-ESP32S2 Saola-1
-
-DRV8833
-
-2 x 6V DC Motor
+* ESP32S2 Saola-1
+* DRV8833 Motor Driver
+* 2 x 6V DC Motor
 
 ---
 
@@ -25,6 +23,4 @@ Reducing the number of nodes down to 5 total. One base, 4 nodes. Found a video v
 
 ---
 
-Getting rid of the Espressif MDF library. It’s not as well documented as PM. I’m also removing OpenCV for face recognition (find another solution for this, openCV data may be too complicated to broadcast over Painless Mesh). OpenCV is going to be a want, not a need. I’ll revisit it and see if I can implement when I’m mostly done. I want to investigate adding **SLAM** (simultaneous localization and mapping). MoSCoW exercise below.
-
-************Words to remember:************ social proxemics, epistemology
+Getting rid of the Espressif MDF library. It’s not as well documented as PM. I’m also removing OpenCV for face recognition (find another solution for this, openCV data may be too complicated to broadcast over Painless Mesh). OpenCV is going to be a want, not a need. I’ll revisit it and see if I can implement when I’m mostly done. I want to investigate adding **SLAM** (simultaneous localization and mapping).
