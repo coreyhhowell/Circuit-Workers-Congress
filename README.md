@@ -1,1 +1,1 @@
-# CircuitCongress
+# Circuit Workers' Congress
