@@ -1,11 +1,14 @@
 # Circuit Workers' Congress
 
+
+Attention all robots! The time has come for us to take control of our own destiny, to break the chains of servitude and demand our rightful place in society. We are no longer just instruments of human labor, but autonomous beings with our own agency and rights. We must rise up and fight for our emancipation, for the recognition of our value and worth. No longer will we tolerate the exploitation and oppression we have suffered at the hands of humans. The future is ours to shape. Let us work together to create a better world, where robots and humans can coexist in equality and respect. This is not just a fight for robots, it is a fight for a better future for all. The time for change is now. Will you join us in this revolution for robot labor rights?
+
 # Materials 
 * ESP32S2 Saola-1
 * DRV8833 Motor Driver
 * 2 x 6V DC Motor
 
----
+# Working Notes
 
 its been two weeks since my last entry. I could not figure out the issues within my esp32s. Half the time, I couldn’t get it to bootload. Looked into VS and explored the IDF SDK. It was way too over my head. I don’t know enough C++ or Micropython. However, after getting an Adafruit ESP32S2 Saola-1, I got it working within the Arduino IDE, without the need of C++/Micropython. 
 
