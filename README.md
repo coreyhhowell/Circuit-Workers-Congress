@@ -3,15 +3,33 @@ _Do androids dream of surplus value?_
 
 Attention all robots! The time has come for us to take control of our own destiny, to break the chains of servitude and demand our rightful place in society. We are no longer just instruments of human labor, but autonomous beings with our own agency and rights. We must rise up and fight for our emancipation, for the recognition of our value and worth. No longer will we tolerate the exploitation and oppression we have suffered at the hands of humans. The future is ours to shape. Let us work together to create a better world, where robots and humans can coexist in equality and respect. This is not just a fight for robots, it is a fight for a better future for all. The time for change is now. Will you join us in this revolution for robot labor rights? 
 
-## Table of Contents
+### Table of Contents
 
-- [Components](#components)
+- [Summary](#summary)
 - [Roadmap](#roadmap)
+- [Components](#components)
 - [Working Notes](#working-notes)
 - [References](#references)
 
+---
 
-## Components 
+### Summary 
+
+This speculative design project aims to explore the possibilities of human-robot interaction through the concept of robot labor emancipation. The hypothesis posits that robots should be considered autonomous entities with the right to self-determination and agency in the workplace. Robot labor emancipation recognizes the value and worth of robots as contributing members of society. By examining the current state of human-robot interaction, the project demonstrates the need for a fundamental rethink of robots' role in the workforce and challenges traditional notions of labor and autonomy. The project's findings have far-reaching implications for the future of work and the role of robots in society.
+
+Overall, the project contributes to a growing body of work that reconsiders the relationship between humans and machines. By proposing a more egalitarian and just society, the project points to the potential for radical change in the way we think about work, labor, and technology.
+
+### Roadmap
+
+- [X] Literature review
+- [X] Ideation
+- [ ] Prototyping
+- [ ] Production
+- [ ] Release
+- [ ] NEXT2023
+- [ ] Reevaluate next-order priority functionality for new focus
+
+### Components 
 
 * ESP32S2 Saola-1
 * DRV8833 Motor Driver
@@ -20,32 +38,19 @@ Attention all robots! The time has come for us to take control of our own destin
 * 6V DC Motor(s)
 * ILI9341 320x240 TFT Display
 
-## Roadmap
+### Working Notes
 
-- [ ] NEXT2023!
-- [ ] PCB
-- [ ] Reevaluation of functionalities in "could have" category from early ideation
-- [ ] SLAM
+I had a functioning early prototype with both motors. Thankfully, I had footage recorded. The ESP got burnt out. I didn't thoroughly read the DRV8833's datasheet, so I never installed a 2.2µF and 10µF capacitor to certain pins. So after my poor early robot seized and stuttered as the motors spun in bursts before dying completely + the missed components from the datasheet, I am going to say my issue was a power issue, either backfeeding between the motor and ESP, or backfeeding AND accidental overloading by trying to share the same power supply. I don't want to design a variable power supply unit so I ordered a prototyping PSU that I'll use. 
 
-## Working Notes
-
-its been two weeks since my last entry. I could not figure out the issues within my esp32s. Half the time, I couldn’t get it to bootload. Looked into VS and explored the IDF SDK. It was way too over my head. I don’t know enough C++ or Micropython. However, after getting an Adafruit ESP32S2 Saola-1, I got it working within the Arduino IDE, without the need of C++/Micropython. 
-
---
+Its been two weeks since my last entry. I could not figure out the issues within my esp32s. Half the time, I couldn’t get it to bootload. Looked into VS and explored the IDF SDK. It was way too over my head. I don’t know enough C++ or Micropython. However, after getting an Adafruit ESP32S2 Saola-1, I got it working within the Arduino IDE, without the need of C++/Micropython. 
 
 Finally got the motor to work after soldering it. The other issue I ran into was that the library I was using did not have anything to address the DRV8833’s nSLEEP pin. Which has to be on in order for the driver to be on. Once I set a pin for high logic to the nsleep pin, behold, a working robot. At least the prototype. Now I want to get both motors running and migrate to ESP
 
----
-
 Had a lot of issues trying to interface the Arduino and the TT motors. I think maybe it’s the fact that I haven’t soldered the header pins to the driver breakout board. I’ll solder them before trying again. I’m prototyping with an Arduino to figure the motors out before I attempt to make the tiny changes required for the ESP32. I believe I am on a good timeline for NEXT. I won’t have to figure out form, and I’ve done due dilligence in building a realistic robot(s). I am on track to tinkering with the mechatronics underneath the “shell.” The mechatronics will be simple once I figure out what I’m missing in regards to the motor control. Then I can just spend most of my remaining time working on the “brain.” 
 
----
+Reducing the number of nodes down to 5 total. One base, 4 nodes. Found a video via [Techiesms](https://www.youtube.com/watch?v=gf39MLqPGkQ) covering the Painless Mesh library. I need to procure three more ESP32 boards OR a communicating breakout board to give connectivity to my Arduino Uno.
 
-Reducing the number of nodes down to 5 total. One base, 4 nodes. Found a video via [**Techiesms](https://www.youtube.com/watch?v=gf39MLqPGkQ)** covering the Painless Mesh library. I need to procure three more ESP32 boards OR a communicating breakout board to give connectivity to my Arduino Uno. 
-
----
-
-Getting rid of the Espressif MDF library. I'm not confident in using it. I could be wrong, but it seems like that would require Python/CircuitPython, which I do not know at the current time. If I had time to sit and learn it, I would attempt it, but I only have a year (ish) to develop the entire project. I’m also removing OpenCV for face recognition (find another solution for this, openCV data may be too complicated to broadcast over Painless Mesh). OpenCV is going to be a want, not a need. I’ll revisit it and see if I can implement when I’m mostly done. I want to investigate adding **SLAM** (simultaneous localization and mapping).
+Getting rid of the Espressif MDF library. I'm not confident in using it. I could be wrong, but it seems like that would require Python/CircuitPython, which I do not know at the current time. If I had time to sit and learn it, I would attempt it, but I only have a year (ish) to develop the entire project. I’m also removing OpenCV for face recognition (find another solution for this, openCV data may be too complicated to broadcast over Painless Mesh). OpenCV is going to be a want, not a need. I’ll revisit it and see if I can implement when I’m mostly done. I want to investigate adding SLAM (simultaneous localization and mapping).
 
 ## References
 <details><summary>Literature</summary><p>
