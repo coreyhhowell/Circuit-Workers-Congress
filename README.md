@@ -26,4 +26,4 @@ Reducing the number of nodes down to 5 total. One base, 4 nodes. Found a video v
 
 ---
 
-Getting rid of the Espressif MDF library. It’s not as well documented as PM. I’m also removing OpenCV for face recognition (find another solution for this, openCV data may be too complicated to broadcast over Painless Mesh). OpenCV is going to be a want, not a need. I’ll revisit it and see if I can implement when I’m mostly done. I want to investigate adding **SLAM** (simultaneous localization and mapping).
+Getting rid of the Espressif MDF library. I'm not confident in using it. I could be wrong, but it seems like that would require Python/CircuitPython, which I do not know at the current time. If I had time to sit and learn it, I would attempt it, but I only have a year (ish) to develop the entire project. I’m also removing OpenCV for face recognition (find another solution for this, openCV data may be too complicated to broadcast over Painless Mesh). OpenCV is going to be a want, not a need. I’ll revisit it and see if I can implement when I’m mostly done. I want to investigate adding **SLAM** (simultaneous localization and mapping).
