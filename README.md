@@ -33,8 +33,8 @@ Overall, the project contributes to a growing body of work that reconsiders the 
 
 * ESP32S2 Saola-1
 * DRV8833 Motor Driver
-* 2.2uF Capacitor(s)
-* 10uF Capacitor(s)
+* 2.2µF Capacitor(s)
+* 10µF Capacitor(s)
 * 6V DC Motor(s)
 * ILI9341 320x240 TFT Display
 
