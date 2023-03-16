@@ -1,34 +1,42 @@
+#include <HCSR04.h>
+const int triggerPin = 33;
+const int echoPin = 34; 
+
 #include <Adafruit_NeoPixel.h>
-Adafruit_NeoPixel pixels(1, onboardLED, NEO_GRB + NEO_KHZ800);
 #define onboardLED 18
+Adafruit_NeoPixel pixels(1, onboardLED, NEO_GRB + NEO_KHZ800);
 
 #include <DRV8833.h>
 DRV8833 driver = DRV8833();
+const int FLT = 12; 
+const int BIN1 = 13;
+const int BIN2 = 14; 
+const int nSleep = 15; 
 const int AIN1 = 17; 
 const int AIN2 = 16; 
-const int nSleep = 15; 
-const int BIN1 = 12;
-const int BIN2 = 13; 
 
 // The speed of the motors:
 const int motorSpeed = 128; // Half speed (255 / 2).
 
-#define LED_PIN 19
+const int testLED = 35;
 
 
 void setup() {
   Serial.begin(9600);
+  pinMode(testLED, OUTPUT);
+  HCSR04.begin(triggerPin, echoPin);
   delay(1000);
   Serial.println("Hello World");
   
   pinMode(LED_PIN, OUTPUT);
   
   
-  pinMode(AIN1, OUTPUT);
+    pinMode(AIN1, OUTPUT);
   pinMode(AIN2, OUTPUT);
   pinMode(BIN1, OUTPUT);
   pinMode(BIN2, OUTPUT);
   pinMode(nSleep, OUTPUT); //nSleep Mode = On when logic HIGH, logic LOW to sleep
+  pinMode(FLT, INPUT);
   digitalWrite(nSleep, HIGH);
 
   digitalWrite(AIN1, LOW);
@@ -67,10 +75,24 @@ int colorCount = 0;
 
 void loop() {
   
+   double* distances = HCSR04.measureDistanceCm();
+
+int testDistance = HCSR04.measureDistanceCm();
+    if (testDistance < 3.0) {
+      digitalWrite(testLED, HIGH);
+    }
+  
   pixels.setPixelColor(0, Wheel(colorCount++));
   pixels.show();   
     if (colorCount > 255)
         colorCount = 0;
+  delay(1000);
+  Serial.print("1: ");
+  Serial.print(distances[0]);
+  Serial.println(" cm");
+  
+  Serial.println("---");
+  delay(1000);
 
   digitalWrite(LED_PIN, HIGH);
   digitalWrite(AIN1, HIGH);
