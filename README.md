@@ -10,7 +10,7 @@ Attention all robots! The time has come for us to take control of our own destin
 
 - [Summary](#summary)
 - [Roadmap](#roadmap)
-- [Build](#build)
+- [Dependencies](#dependencies)
 - [Working Notes](#working-notes)
 - [References](#references)
 
@@ -43,15 +43,6 @@ Overall, the project contributes to a growing body of work that reconsiders the 
 * [PainlessMesh](https://github.com/gmag11/painlessMesh/ "PainlessMesh library")
 * [Stepper](https://github.com/arduino-libraries/Stepper/ "Arduino cc stepper library")
 * [TaskScheduler](https://github.com/arkhipenko/TaskScheduler/ "TaskScheduler library")
-
-### Build 
-
-* ESP32S2 Saola-1
-* DRV8833 Motor Driver
-* 2.2µF Capacitor(s)
-* 10µF Capacitor(s)
-* 6V DC Motor(s)
-* ILI9341 320x240 TFT Display 
 
 ### Working Notes
 
