@@ -29,10 +29,11 @@ const int nSleep = 15;
 const int AIN1 = 17; 
 const int AIN2 = 16; 
 
-// The speed of the motors:
-const int motorSpeed = 128; // Half speed (255 / 2).
+//  Motor speed
+//  50% Duty Cycle 
+const int motorSpeed = 128; 
 
-//Demo Joystick
+//  Demo Joystick
 const int joystick_Switch_pin = 3; 
 const int joystick_X_pin = 5;
 const int joystick_Y_pin = 4;
@@ -99,7 +100,35 @@ uint32_t Wheel(byte WheelPos)
 int colorCount = 0;
 
 void motorsForward() {
+  //  Motors forward
+  digitalWrite(AIN1, HIGH);
+  digitalWrite(BIN1, HIGH);
+  analogWrite(AIN2, motorSpeed);
+  analogWrite(BIN2, motorSpeed);
+}
+void motorsBackward() {
+  //  Motors forward
+  // Just reverse polarity 
+  digitalWrite(AIN2, HIGH);
+  digitalWrite(BIN2, HIGH);
+  analogWrite(AIN1, motorSpeed);
+  analogWrite(BIN1, motorSpeed);
+}
 
+void motorsRight() {
+  //  Motors right
+  // A on, B off
+  digitalWrite(AIN1, HIGH);
+  digitalWrite(BIN1, LOW);
+  analogWrite(AIN2, motorSpeed);
+}
+
+void motorsLeft() {
+  //  Motors right
+  // A off, B on
+  digitalWrite(AIN1, LOW);
+  digitalWrite(BIN1, HIGH);
+  analogWrite(BIN2, motorSpeed);
 }
 
 void loop() {
@@ -143,16 +172,18 @@ void loop() {
   Serial.print("Joystick Y: ");
   Serial.println(joystick_Y);
 
-  // digitalWrite(AIN1, HIGH);
-  // digitalWrite(BIN1, HIGH);
-  // digitalWrite(AIN2, LOW);
-  // analogWrite(AIN1, motorSpeed);
-  // analogWrite(BIN1, motorSpeed);  
-  // delay(1000);
-  // digitalWrite(AIN1, LOW);
-  // digitalWrite(BIN1, LOW);
-  // analogWrite(AIN1, 0);
-  // analogWrite(BIN1, 0);
-  // delay(1000);
+  
+  //Cycle motors test
+  digitalWrite(AIN1, HIGH);
+  digitalWrite(BIN1, HIGH);
+  digitalWrite(AIN2, LOW);
+  analogWrite(AIN1, motorSpeed);
+  analogWrite(BIN1, motorSpeed);  
+  delay(1000);
+  digitalWrite(AIN1, LOW);
+  digitalWrite(BIN1, LOW);
+  analogWrite(AIN1, 0);
+  analogWrite(BIN1, 0);
+  delay(1000);
   return;
 }
