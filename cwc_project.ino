@@ -1,3 +1,15 @@
+#include <SPI.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_ILI9341.h>
+
+#define TFT_CS 10
+#define TFT_DC 9
+#define TFT_MOSI 11
+#define TFT_SCK 13
+#define TFT_RST 7 // RST can be connected to any digital pin
+
+Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_MOSI, TFT_SCK, TFT_RST);
+
 #include <ArduinoJson.h>
 #include <ArduinoJson.hpp>
 
@@ -29,19 +41,17 @@ const int nSleep = 15;
 const int AIN1 = 17; 
 const int AIN2 = 16; 
 
-//  Motor speed
-//  50% Duty Cycle 
+//  Motor speed 50% Duty Cycle 
 const int motorSpeed = 128; 
-
-//  Demo Joystick
-const int joystick_Switch_pin = 3; 
-const int joystick_X_pin = 5;
-const int joystick_Y_pin = 4;
-
 
 void setup() {
   
   Serial.begin(9600);
+  
+  tft.begin();
+  tft.setRotation(2); // adjust the rotation as needed
+  tft.fillScreen(ILI9341_WHITE);
+  
   HCSR04.begin(triggerPin, echoPin);
   pixels.setPixelColor(0, 130);
   pixels.show();   
@@ -132,6 +142,31 @@ void motorsLeft() {
 }
 
 void loop() {
+   tft.fillScreen(ILI9341_WHITE);
+  char binarySequence[] = "00010000001110100011011110010000001100010011100100110010101100001011010110010000001110100011010000110010100100000011000110110100001100001011010010110111001110011001000000110111101100110001000000111001101100101011100100111011001101001011101000111010101100100011001010010000001100001011011100110010000100000011001000110010101101101011000010110111001100100001000000110111101110101011100100010000001110010011010010110011101101000"; // your binary sequence here
+  int sequenceLength = strlen(binarySequence);
+  int squareSize = 14; // size of each square in pixels
+  int x = 0; // starting x position
+  int y = 0; // starting y position
+
+  for (int i = 0; i < sequenceLength; i++) {
+    char digit = binarySequence[i];
+
+    if (digit == '1') {
+      tft.fillRect(x, y, squareSize, squareSize, ILI9341_YELLOW);
+    } else {
+      tft.fillRect(x, y, squareSize, squareSize, ILI9341_BLUE);
+    }
+
+    x += squareSize;
+
+    if (x >= tft.width()) {
+      x = 0;
+      y += squareSize;
+    } 
+    delay(10);
+  }
+  
   double* distances = HCSR04.measureDistanceCm();
 
   //Test distance, gets pulled from distances array
