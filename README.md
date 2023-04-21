@@ -26,7 +26,7 @@ Overall, the project contributes to a growing body of work that reconsiders the 
 
 - [X] Literature review
 - [X] Ideation
-- [ ] Prototyping
+- [X] Prototyping
 - [ ] Production
 - [ ] Release
 - [ ] NEXT2023
