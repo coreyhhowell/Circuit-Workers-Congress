@@ -45,7 +45,7 @@ Overall, the project contributes to a growing body of work that reconsiders the 
 * [TaskScheduler](https://github.com/arkhipenko/TaskScheduler/ "TaskScheduler library")
 * [PNG Decoder](https://github.com/bitbank2/PNGdec "PNGdec library")
 * [Bus IO](https://github.com/adafruit/Adafruit_BusIO "BusIO by Adafruit")
-* [Air Quality PM Sensor] (https://github.com/adafruit/Adafruit_PM25AQI "PM25 Air Quality sensor")
+* [Air Quality PM Sensor](https://github.com/adafruit/Adafruit_PM25AQI "PM25 Air Quality sensor")
 * [TFT eSPI for ESP32-based devices](https://github.com/Bodmer/TFT_eSPI "TFT eSPI Display Library for ESP32")
 * [ESP32-S PWM and GPIO Management](https://github.com/Dlloydev/ESP32-ESP32S2-AnalogWrite "PWM and GPIO Management for ESP32-S2")
 
