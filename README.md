@@ -2,7 +2,7 @@
 ![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/coreyhhowell/circuit-workers-congress) 
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/coreyhhowell/circuit-workers-congress?color=3f4aff&style=flat-square) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/coreyhhowell/circuit-workers-congress?color=3f4aff)
 
-[Project page on coreyhhowell.com](https://coreyhhowell.com/cwc)
+[Project page on coreyhhowell.com](https://www.coreyhhowell.com/cwc)
 
 _Do androids dream of surplus value? Toward a new conceptual framework._
 
